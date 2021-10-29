@@ -1,0 +1,18 @@
+.main-banner {
+  height: 100%;
+}
+
+.carousel-des {
+  top: 200px;
+}
+.carousel-des h1 {
+  font-size: 60px;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin: 30px 0;
+}
+.carousel-des h5 {
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 9px;
+}

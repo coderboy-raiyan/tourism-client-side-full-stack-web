@@ -1,0 +1,76 @@
+.main-card {
+  border: 0;
+  cursor: pointer;
+}
+
+.main-card:hover img {
+  transform: scale(1.2);
+  -webkit-transform: scale(1.2);
+  -moz-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  -o-transform: scale(1.2);
+}
+.card-img {
+  overflow: hidden;
+}
+.card-img img {
+  transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+}
+.ratings {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 65%;
+}
+.placeName {
+  font-size: 15px;
+}
+.card-title {
+  font-size: 17px;
+  color: #333;
+  margin-bottom: 26px;
+}
+.rating-title {
+  font-size: 15px;
+  color: rgb(85, 83, 83);
+}
+
+.bi-star-fill,
+.bi-star-half {
+  color: gold;
+  margin-right: 2px;
+}
+.hour-people {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 70%;
+}
+
+.people-icon,
+.person-title {
+  font-size: 12px;
+  color: #7c7b7b;
+}
+.book-now {
+  background: #5191fa;
+  border: none;
+  color: #fff;
+  display: block;
+  padding: 10px 30px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  margin-top: 20px;
+}
+.des {
+  font-size: 15px;
+  color: grey;
+  line-height: 24px;
+}
