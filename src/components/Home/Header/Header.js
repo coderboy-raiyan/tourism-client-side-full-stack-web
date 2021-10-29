@@ -2,6 +2,7 @@ import React from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
 import { FiLogOut } from "react-icons/fi";
 import { Link } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 import useAuth from "./../../../Hooks/useAuth";
 
 const Header = () => {
@@ -33,6 +34,11 @@ const Header = () => {
               <Link className="nav-link" to="/manageorders">
                 Manage Orders
               </Link>
+            </li>
+            <li className="nav-item  mt-2 me-3">
+              <HashLink className="nav-link" to="/home#services">
+                Services
+              </HashLink>
             </li>
             {userData.email ? (
               <>
