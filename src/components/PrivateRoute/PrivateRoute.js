@@ -1,16 +1,27 @@
+import { css } from "@emotion/react";
 import React from "react";
-import { Spinner } from "react-bootstrap";
 import { Redirect, Route } from "react-router-dom";
+import GridLoader from "react-spinners/GridLoader";
 import useAuth from "./../../Hooks/useAuth";
+
+const override = css`
+  display: block;
+  margin: 0 auto;
+  border-color: red;
+`;
 
 const PrivateRoute = ({ children, ...rest }) => {
   const { userData, isLoading } = useAuth();
+  //   let [color, setColor] = useState("#ffffff");
 
   if (isLoading) {
     return (
-      <Spinner animation="border" role="status">
-        <span className="visually-hidden">Loading...</span>
-      </Spinner>
+      <GridLoader
+        color="#61E0C7"
+        loading={isLoading}
+        css={override}
+        size={50}
+      />
     );
   }
 
