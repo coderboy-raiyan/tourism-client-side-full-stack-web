@@ -138,7 +138,7 @@ const PlaceOrder = () => {
                         className="form-control"
                         type="text"
                         required
-                        defaultValue={placeDetails.title}
+                        defaultValue={placeDetails.place}
                         {...register("Place ")}
                       />
                     </InputGroup>

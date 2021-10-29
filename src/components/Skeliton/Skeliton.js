@@ -6,7 +6,7 @@ const Skeliton = () => {
   return (
     <Col xs={12} lg={4} md={4}>
       <Card className="h-100 main-card shadow-sm">
-        <div className="card-img">
+        <div className="card-img p-3">
           <Skeleton height={250} />
         </div>
 

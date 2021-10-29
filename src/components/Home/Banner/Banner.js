@@ -7,7 +7,7 @@ const Banner = () => {
       <Carousel>
         <Carousel.Item>
           <img
-            className="d-block w-100"
+            className=" w-100"
             src="https://shinetheme.com/travelerdata/yatour/wp-content/uploads/2019/11/boat-21.jpg"
             alt="First slide"
           />
@@ -19,7 +19,7 @@ const Banner = () => {
         </Carousel.Item>
         <Carousel.Item>
           <img
-            className="d-block w-100"
+            className=" w-100"
             src="https://shinetheme.com/travelerdata/yatour/wp-content/uploads/2019/11/img-hero.jpg"
             alt="Second slide"
           />
