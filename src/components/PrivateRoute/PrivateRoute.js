@@ -16,12 +16,16 @@ const PrivateRoute = ({ children, ...rest }) => {
 
   if (isLoading) {
     return (
-      <GridLoader
-        color="#61E0C7"
-        loading={isLoading}
-        css={override}
-        size={50}
-      />
+      <div className="d-flex justify-content-center align-items-center vh-100">
+        <div>
+          <GridLoader
+            color="#61E0C7"
+            loading={isLoading}
+            css={override}
+            size={50}
+          />
+        </div>
+      </div>
     );
   }
 

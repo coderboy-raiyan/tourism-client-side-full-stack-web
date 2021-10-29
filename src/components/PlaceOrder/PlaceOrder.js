@@ -4,12 +4,14 @@ import { useForm } from "react-hook-form";
 import { GoLocation } from "react-icons/go";
 import { useParams } from "react-router-dom";
 import Swal from "sweetalert2";
+import useAuth from "./../../Hooks/useAuth";
 import "./PlaceOrder.css";
 
 const PlaceOrder = () => {
   const { register, handleSubmit, reset } = useForm();
   const [placeDetails, setPlaceDetails] = useState({});
   const [registerData, setRegisterData] = useState({});
+  const { userData } = useAuth();
   const { orderId } = useParams();
 
   // getting a singal place data based on params
@@ -32,7 +34,7 @@ const PlaceOrder = () => {
       .then((res) => res.json())
       .then((data) => {
         if (data) {
-          Swal.fire("Good job!", "Order done", "Go to my orders");
+          Swal.fire("Good job!", "Order done", "success");
         } else {
           Swal.fire({
             icon: "error",
@@ -89,6 +91,7 @@ const PlaceOrder = () => {
                         placeholder="Full Name"
                         className="form-control"
                         type="text"
+                        defaultValue={userData?.displayName}
                         required
                         {...register("full_name")}
                       />
@@ -101,6 +104,7 @@ const PlaceOrder = () => {
                         className="form-control"
                         type="email"
                         required
+                        defaultValue={userData?.email}
                         {...register("email")}
                       />
                     </InputGroup>
