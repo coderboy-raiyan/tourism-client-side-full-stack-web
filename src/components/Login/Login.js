@@ -2,6 +2,7 @@ import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { FcGoogle } from "react-icons/fc";
 import { useHistory, useLocation } from "react-router-dom";
+import Swal from "sweetalert2";
 import useAuth from "./../../Hooks/useAuth";
 import "./Login.css";
 
@@ -15,6 +16,7 @@ const Login = () => {
     googleSignIn().then(() => {
       history.push(redirect_uri);
       setError("");
+      Swal.fire("Great 🚀", "Thanks for login enjoy", "success");
     });
   };
 

@@ -8,7 +8,7 @@ const usePlaces = () => {
     setDataLoading(true);
     setTimeout(() => {
       setDataLoading(false);
-    }, 3000);
+    }, 4000);
   }, []);
 
   useEffect(() => {
@@ -17,7 +17,7 @@ const usePlaces = () => {
       .then((res) => res.json())
       .then((data) => setPlaces(data))
       .finally(() => {
-        setDataLoading(false);
+        // setDataLoading(false);
       });
   }, []);
 
