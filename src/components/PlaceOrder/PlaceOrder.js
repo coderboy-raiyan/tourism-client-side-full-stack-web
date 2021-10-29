@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Col, Container, Form, InputGroup, Row } from "react-bootstrap";
+import { Card, Col, Container, Form, InputGroup, Row } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { GoLocation } from "react-icons/go";
 import { useParams } from "react-router-dom";
@@ -67,6 +67,11 @@ const PlaceOrder = () => {
       </div>
       <Container>
         <Row className="d-flex justify-content-between align-items-start py-5">
+          <Col xs={12} lg={12} md={12}>
+            <h2 className="text-center py-3 mb-5 fw-bold text-dark border-2 border-bottom w-50 m-auto">
+              Place Order
+            </h2>
+          </Col>
           <Col xs={12} lg={6} md={6}>
             <div className="register-inner">
               <Row>
@@ -89,7 +94,7 @@ const PlaceOrder = () => {
                     <InputGroup className="mb-3">
                       <input
                         placeholder="Full Name"
-                        className="form-control"
+                        className="form-control shadow"
                         type="text"
                         defaultValue={userData?.displayName}
                         required
@@ -101,7 +106,7 @@ const PlaceOrder = () => {
                     <InputGroup className="mb-3">
                       <input
                         placeholder="Username and Email"
-                        className="form-control"
+                        className="form-control shadow"
                         type="email"
                         required
                         defaultValue={userData?.email}
@@ -113,7 +118,7 @@ const PlaceOrder = () => {
                     <InputGroup className="mb-3">
                       <input
                         placeholder="Date"
-                        className="form-control"
+                        className="form-control shadow"
                         type="date"
                         required
                         {...register("date")}
@@ -124,7 +129,7 @@ const PlaceOrder = () => {
                     <InputGroup className="mb-3">
                       <input
                         placeholder="Description"
-                        className="form-control"
+                        className="form-control shadow"
                         type="text"
                         required
                         {...register("description")}
@@ -135,7 +140,7 @@ const PlaceOrder = () => {
                     <InputGroup className="mb-3">
                       <input
                         placeholder="place"
-                        className="form-control"
+                        className="form-control shadow"
                         type="text"
                         required
                         defaultValue={placeDetails.place}
@@ -158,21 +163,25 @@ const PlaceOrder = () => {
             <div className="order-main mt-5">
               <Row>
                 <Col xs={12} lg={12} md={12}>
-                  <div className="pricing-sec">
-                    <h3>
-                      {" "}
-                      <span>from</span> ${placeDetails.price}
-                    </h3>
-                  </div>
-                </Col>
-                <Col xs={12} lg={12} md={12}>
-                  <div className="pricing-sec date-sec">
-                    <h3>
-                      {" "}
-                      <span>Date</span>{" "}
-                      {registerData?.date ? registerData.date : "fill the form"}
-                    </h3>
-                  </div>
+                  <Card className="text-center">
+                    <Card.Header>Featured</Card.Header>
+                    <Card.Body>
+                      <img
+                        src={placeDetails?.img}
+                        alt=""
+                        width="250px"
+                        className="mb-4"
+                      />
+                      <Card.Title>{placeDetails?.title}</Card.Title>
+                      <Card.Text>{placeDetails?.des?.slice(0, 100)}</Card.Text>
+                      <Card.Text className="h5">
+                        Price : ${placeDetails?.price}
+                      </Card.Text>
+                      <Card.Text className="h6 mt-4">
+                        <GoLocation /> {placeDetails?.place}
+                      </Card.Text>
+                    </Card.Body>
+                  </Card>
                 </Col>
               </Row>
             </div>
