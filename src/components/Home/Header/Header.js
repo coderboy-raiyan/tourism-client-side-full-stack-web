@@ -8,7 +8,7 @@ const Header = () => {
   const { logout, userData, isLoading } = useAuth();
   console.log(isLoading);
   return (
-    <Navbar bg="light" expand="lg" className="p-3 shadow-sm">
+    <Navbar bg="light" sticky="top" expand="lg" className="p-3 shadow-sm">
       <Container>
         <Link className="navbar-brand" to="/">
           <img

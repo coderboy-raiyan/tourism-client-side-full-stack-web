@@ -1,0 +1,28 @@
+.chooseus-section {
+  height: 100%;
+  min-height: 700px;
+  padding: 70px 0;
+}
+.chooseus-sub-title {
+  font-size: 20px;
+  font-weight: 500;
+  color: #5191fb;
+}
+.chooseus-title {
+  line-height: 50px;
+  margin-bottom: 40px;
+}
+.chooseus-des {
+  font-size: 20px;
+  line-height: 35px;
+  color: #797979;
+}
+.chooseus-inner button {
+  display: block;
+  width: 40%;
+  margin-top: 30px;
+}
+.choose-banner {
+  width: 90%;
+  margin: auto;
+}
