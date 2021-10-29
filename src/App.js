@@ -2,6 +2,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import "./App.css";
+import Footer from "./components/Footer/Footer";
 import Header from "./components/Home/Header/Header";
 import Home from "./components/Home/Home/Home";
 import Login from "./components/Login/Login";
@@ -41,6 +42,7 @@ const App = () => {
               <NotFound></NotFound>
             </Route>
           </Switch>
+          <Footer />
         </BrowserRouter>
       </PlaceProvider>
     </AuthProvider>

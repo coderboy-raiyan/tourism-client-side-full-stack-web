@@ -7,3 +7,9 @@ img {
   max-width: 100%;
   height: auto;
 }
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
