@@ -1,11 +1,33 @@
 import React from "react";
 import { Col, Container, Form, InputGroup, Row } from "react-bootstrap";
 import { useForm } from "react-hook-form";
+import Swal from "sweetalert2";
 import "./AddNewService.css";
 
 const AddNewService = () => {
-  const { register, handleSubmit } = useForm();
-  const onSubmit = (data) => console.log(data);
+  const { register, handleSubmit, reset } = useForm();
+  // Add a new service
+  const onSubmit = (data) => {
+    fetch("http://localhost:5000/place", {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify(data),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data) {
+          Swal.fire({
+            position: "top-bottom",
+            icon: "success",
+            title: "Your service has been saved",
+            showConfirmButton: false,
+            timer: 1500,
+          });
+        }
+      });
+    reset();
+    // console.log(data);
+  };
   return (
     <section className="add-service">
       <Container>
@@ -16,7 +38,7 @@ const AddNewService = () => {
             </h2>
           </Col>
           <Col xs={12} lg={6} md={6}>
-            <div className="register-inner">
+            <div className="new-inner">
               <Row>
                 <Col xs={12} lg={12} md={12}>
                   <img
@@ -36,33 +58,99 @@ const AddNewService = () => {
                   <Col xs={12} lg={12} md={12}>
                     <InputGroup className="mb-3">
                       <input
-                        placeholder="Full Name"
+                        placeholder="Title"
                         className="form-control shadow"
                         type="text"
                         required
-                        {...register("full_name")}
+                        {...register("title")}
                       />
                     </InputGroup>
                   </Col>
                   <Col xs={12} lg={12} md={12}>
                     <InputGroup className="mb-3">
                       <input
-                        placeholder="Username and Email"
+                        placeholder="Img"
                         className="form-control shadow"
-                        type="email"
+                        type="text"
                         required
-                        {...register("email")}
+                        {...register("img")}
                       />
                     </InputGroup>
                   </Col>
-                  <Col xs={12} lg={12} md={12}>
+                  <Col xs={12} lg={4} md={4}>
                     <InputGroup className="mb-3">
                       <input
-                        placeholder="Date"
+                        placeholder="Place or Destination"
                         className="form-control shadow"
-                        type="date"
+                        type="text"
                         required
-                        {...register("date")}
+                        {...register("place")}
+                      />
+                    </InputGroup>
+                  </Col>
+                  <Col xs={12} lg={4} md={4}>
+                    <InputGroup className="mb-3">
+                      <input
+                        placeholder="Ratings"
+                        className="form-control shadow"
+                        type="text"
+                        required
+                        {...register("ratings")}
+                      />
+                    </InputGroup>
+                  </Col>
+                  <Col xs={12} lg={4} md={4}>
+                    <InputGroup className="mb-3">
+                      <input
+                        placeholder="Reviews"
+                        className="form-control shadow"
+                        type="number"
+                        required
+                        {...register("reviews")}
+                      />
+                    </InputGroup>
+                  </Col>
+                  <Col xs={12} lg={6} md={6}>
+                    <InputGroup className="mb-3">
+                      <input
+                        placeholder="People limit"
+                        className="form-control shadow"
+                        type="number"
+                        required
+                        {...register("people")}
+                      />
+                    </InputGroup>
+                  </Col>
+                  <Col xs={12} lg={6} md={6}>
+                    <InputGroup className="mb-3">
+                      <input
+                        placeholder="Price"
+                        className="form-control shadow"
+                        type="number"
+                        required
+                        {...register("price")}
+                      />
+                    </InputGroup>
+                  </Col>
+                  <Col xs={12} lg={6} md={6}>
+                    <InputGroup className="mb-3">
+                      <input
+                        placeholder="Time limit ex.10hr"
+                        className="form-control shadow"
+                        type="number"
+                        required
+                        {...register("hr")}
+                      />
+                    </InputGroup>
+                  </Col>
+                  <Col xs={12} lg={6} md={6}>
+                    <InputGroup className="mb-3">
+                      <input
+                        placeholder="Status"
+                        className="form-control shadow"
+                        type="text"
+                        required
+                        {...register("status")}
                       />
                     </InputGroup>
                   </Col>
@@ -73,35 +161,13 @@ const AddNewService = () => {
                         className="form-control shadow"
                         type="text"
                         required
-                        {...register("description")}
+                        {...register("des")}
                       />
                     </InputGroup>
                   </Col>
                   <Col xs={12} lg={12} md={12}>
-                    <InputGroup className="mb-3">
-                      <input
-                        placeholder="place"
-                        className="form-control shadow"
-                        type="text"
-                        required
-                        {...register("Place")}
-                      />
-                    </InputGroup>
-                  </Col>
-                  <Col xs={12} lg={12} md={12}>
-                    <InputGroup className="mb-3">
-                      <input
-                        placeholder="Your Address"
-                        className="form-control shadow"
-                        type="text"
-                        required
-                        {...register("address")}
-                      />
-                    </InputGroup>
-                  </Col>
-                  <Col xs={12} lg={12} md={12}>
-                    <button className=" w-100 d-block mt-3 book-btn">
-                      Book Now
+                    <button className=" w-100 d-block mt-3 book-btn shadow">
+                      Add Service
                     </button>
                   </Col>
                 </Row>

@@ -40,7 +40,7 @@ const Skeliton = () => {
             </span>
           </p>
 
-          <button className="book-now  px-5">
+          <button className="btn btn-light px-5">
             <Skeleton />
           </button>
         </Card.Body>

@@ -49,7 +49,7 @@ const SingalService = ({ visit }) => {
                 emptySymbol={<i className="bi bi-star-half"></i>}
                 fullSymbol={<i className="bi bi-star-fill"></i>}
                 readonly
-                initialRating={ratings}
+                initialRating={Number(ratings)}
               />
             </span>{" "}
             <span className="rating-title">{reviews} Reviews</span>
