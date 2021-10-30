@@ -5,7 +5,7 @@ import "./SingalOrders.css";
 
 const SingalOrders = ({ order, handelCancel }) => {
   const { Place, date, des, address } = order;
-  console.log(order);
+
   return (
     <Col xs={12} lg={6} md={6}>
       <div className="card mb-3 shadow">

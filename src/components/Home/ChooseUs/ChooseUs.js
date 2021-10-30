@@ -7,8 +7,8 @@ const ChooseUs = () => {
     <section className="chooseus-section">
       <Container>
         <Row className="align-items-center">
-          <Col xs={6} lg={6} md={6}>
-            <div className="chooseus-inner">
+          <Col xs={12} lg={6} md={6}>
+            <div className="chooseus-inner mb-4">
               <p className="chooseus-sub-title">
                 <small>WHY CHOOSE US</small>
               </p>

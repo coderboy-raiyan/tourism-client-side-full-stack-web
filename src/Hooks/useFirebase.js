@@ -34,7 +34,6 @@ const useFirebase = () => {
     onAuthStateChanged(auth, (user) => {
       if (user) {
         setUserData(user);
-        console.log("looged in", user);
       } else {
         setUserData({});
       }

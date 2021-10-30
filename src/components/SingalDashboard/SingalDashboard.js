@@ -2,7 +2,6 @@ import React from "react";
 import { AiOutlineEdit, AiTwotoneDelete } from "react-icons/ai";
 
 const SingalDashboard = ({ order, handelUpdate, handelDelete }) => {
-  // console.log(order);
   const { _id, email, full_name } = order;
   return (
     <>

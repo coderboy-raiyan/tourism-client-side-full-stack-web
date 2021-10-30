@@ -15,7 +15,7 @@ const usePlaces = () => {
 
   useEffect(() => {
     setDataLoading(true);
-    fetch("http://localhost:5000/places")
+    fetch("https://secure-lake-39134.herokuapp.com/places")
       .then((res) => res.json())
       .then((data) => setPlaces(data))
       .finally(() => {

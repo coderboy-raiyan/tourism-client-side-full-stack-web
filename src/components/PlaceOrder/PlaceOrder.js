@@ -16,7 +16,7 @@ const PlaceOrder = () => {
 
   // getting a singal place data based on params
   useEffect(() => {
-    fetch(`http://localhost:5000/places/${orderId}`)
+    fetch(`https://secure-lake-39134.herokuapp.com/places/${orderId}`)
       .then((res) => res.json())
       .then((data) => setPlaceDetails(data));
   }, []);
@@ -27,7 +27,7 @@ const PlaceOrder = () => {
 
     const placeAllDetails = { ...data, placeDetails, orderStatus };
 
-    fetch("http://localhost:5000/place/going", {
+    fetch("https://secure-lake-39134.herokuapp.com/place/going", {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(placeAllDetails),

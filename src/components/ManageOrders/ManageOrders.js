@@ -20,7 +20,7 @@ const ManageOrders = () => {
   }, []);
 
   useEffect(() => {
-    fetch("http://localhost:5000/placeorder")
+    fetch("https://secure-lake-39134.herokuapp.com/placeorder")
       .then((res) => res.json())
       .then((data) => setAllOrders(data));
   }, [isUpdated]);
@@ -36,7 +36,7 @@ const ManageOrders = () => {
     }).then((result) => {
       /* Read more about isConfirmed, isDenied below */
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/placeorder`, {
+        fetch(`https://secure-lake-39134.herokuapp.com/placeorder`, {
           method: "PUT",
           headers: { "content-type": "application/json" },
           body: JSON.stringify({ id: id }),
@@ -67,7 +67,7 @@ const ManageOrders = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/placeorder/${id}`, {
+        fetch(`https://secure-lake-39134.herokuapp.com/placeorder/${id}`, {
           method: "DELETE",
           headers: { "content-type": "application/json" },
         })

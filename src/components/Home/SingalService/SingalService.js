@@ -8,18 +8,7 @@ import { useHistory } from "react-router-dom";
 import "./SingalService.css";
 
 const SingalService = ({ visit }) => {
-  const {
-    title,
-    img,
-    _id,
-    hr,
-    discount,
-    des,
-    people,
-    place,
-    ratings,
-    reviews,
-  } = visit;
+  const { title, img, _id, hr, des, people, place, ratings, reviews } = visit;
   const history = useHistory();
   const [isReadMore, setReadMore] = useState(false);
   const handelPlace = () => {

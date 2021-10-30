@@ -21,7 +21,7 @@ const Orders = () => {
 
   // get all the users using their email
   useEffect(() => {
-    fetch(`http://localhost:5000/orders/${userData.email}`)
+    fetch(`https://secure-lake-39134.herokuapp.com/orders/${userData.email}`)
       .then((res) => res.json())
       .then((data) => setOrders(data));
   }, [isDeleted]);
@@ -36,7 +36,7 @@ const Orders = () => {
     }).then((result) => {
       /* Read more about isConfirmed, isDenied below */
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/orders/${id}`, {
+        fetch(`https://secure-lake-39134.herokuapp.com/orders/${id}`, {
           method: "DELETE",
           headers: { "content-type": "application/json" },
         })

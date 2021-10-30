@@ -16,3 +16,19 @@
   text-transform: uppercase;
   letter-spacing: 9px;
 }
+/* Responsive starts */
+
+@media only screen and (max-width: 768px) {
+  .main-banner img {
+    height: 200px;
+  }
+  .carousel-des {
+    top: 0;
+  }
+  .carousel-des h1 {
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin: 20px 0;
+  }
+}

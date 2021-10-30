@@ -16,7 +16,7 @@ TopBarProgress.config({
 
 const Services = () => {
   const { places, isdataLoading } = useAllPlaces();
-  console.log(places);
+
   return (
     <section className="main-services py-5" id="services">
       {isdataLoading && <TopBarProgress />}

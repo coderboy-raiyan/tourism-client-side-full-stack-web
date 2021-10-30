@@ -29,7 +29,7 @@ const CustomerFeed = () => {
           {feed.map((item, index) => {
             return (
               <Col xs={12} lg={6} md={6} key={index}>
-                <div className="feedback-item shadow-sm p-3 border rounded">
+                <div className="feedback-item shadow-sm p-3 border rounded mb-4">
                   <Row>
                     <Col xs={12} lg={6} md={6}>
                       <div className="feedback-des">

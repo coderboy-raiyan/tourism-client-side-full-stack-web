@@ -7,7 +7,6 @@ import useAuth from "./../../../Hooks/useAuth";
 
 const Header = () => {
   const { logout, userData, isLoading } = useAuth();
-  console.log(isLoading);
   return (
     <Navbar bg="light" sticky="top" expand="lg" className="p-3 shadow-sm">
       <Container fluid>

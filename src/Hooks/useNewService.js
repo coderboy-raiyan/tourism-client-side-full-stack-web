@@ -8,7 +8,7 @@ const useNewService = () => {
   // Add a new service
 
   const onSubmit = (data) => {
-    fetch("http://localhost:5000/place", {
+    fetch("https://secure-lake-39134.herokuapp.com/place", {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(data),
@@ -30,8 +30,6 @@ const useNewService = () => {
         setIsNewAdded(false);
       });
     reset();
-    // console.log(data);
-    console.log(isNewAdded);
   };
 
   return {
