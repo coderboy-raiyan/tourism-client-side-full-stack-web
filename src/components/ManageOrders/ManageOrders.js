@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Col, Container, Row, Table } from "react-bootstrap";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import Swal from "sweetalert2";
 import SingalDashboard from "../SingalDashboard/SingalDashboard";
 import "./ManageOrders.css";
@@ -65,6 +67,15 @@ const ManageOrders = () => {
               );
               setAllOrders(updatedOrders);
               Swal.fire("Deleted!", "Your file has been deleted.", "success");
+              toast.success("🚀 Order Deleted!", {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+              });
             }
           });
       } else {
@@ -75,6 +86,21 @@ const ManageOrders = () => {
 
   return (
     <section className="main-dashboard">
+      <div>
+        <ToastContainer
+          position="top-right"
+          autoClose={5000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+        />
+        {/* Same as */}
+        <ToastContainer />
+      </div>
       <Container>
         <Row className="py-5">
           <Col xs={12} lg={12} md={12}>
