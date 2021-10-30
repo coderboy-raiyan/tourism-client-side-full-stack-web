@@ -24,6 +24,7 @@ const SingalService = ({ visit }) => {
 
   const handelPlace = () => {
     history.push(`/order/${_id}`);
+    window.scrollTo(0, 0);
   };
 
   return (

@@ -21,18 +21,30 @@ const Header = () => {
         <Navbar.Collapse id="navbarScroll">
           <Nav className="ms-auto my-2 my-lg-0 ">
             <li className="nav-item me-3 mt-2">
-              <Link className="nav-link" to="/home">
+              <Link
+                className="nav-link"
+                to="/home"
+                onClick={() => window.scrollTo(0, 0)}
+              >
                 Home
               </Link>
             </li>
             <li className="nav-item mt-2  me-3">
-              <Link className="nav-link" to="/orders">
+              <Link
+                className="nav-link"
+                to="/orders"
+                onClick={() => window.scrollTo(0, 0)}
+              >
                 My orders
               </Link>
             </li>
 
             <li className="nav-item  mt-2 me-3">
-              <HashLink className="nav-link" to="/home#services">
+              <HashLink
+                className="nav-link"
+                to="/home#services"
+                onClick={() => window.scrollTo(0, 0)}
+              >
                 Services
               </HashLink>
             </li>
@@ -40,12 +52,20 @@ const Header = () => {
             {userData.email ? (
               <>
                 <li className="nav-item  mt-2 me-3">
-                  <Link className="nav-link" to="/addnewservice">
+                  <Link
+                    className="nav-link"
+                    to="/addnewservice"
+                    onClick={() => window.scrollTo(0, 0)}
+                  >
                     Add New Service
                   </Link>
                 </li>
                 <li className="nav-item  mt-2 me-3">
-                  <Link className="nav-link" to="/manageorders">
+                  <Link
+                    className="nav-link"
+                    to="/manageorders"
+                    onClick={() => window.scrollTo(0, 0)}
+                  >
                     Manage All Orders
                   </Link>
                 </li>
@@ -68,7 +88,11 @@ const Header = () => {
               </>
             ) : (
               <li className="nav-item mt-2  me-3">
-                <Link className="nav-link" to="/login">
+                <Link
+                  className="nav-link"
+                  to="/login"
+                  onClick={() => window.scrollTo(0, 0)}
+                >
                   Login
                 </Link>
               </li>
