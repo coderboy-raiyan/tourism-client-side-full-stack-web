@@ -49,6 +49,9 @@ const Orders = () => {
               setOrders(updatedOne);
               Swal.fire("Saved!", "", "success");
             }
+          })
+          .finally(() => {
+            setDeleted(false);
           });
       } else if (result.isDenied) {
         Swal.fire("Ok! No Problem", "", "info");

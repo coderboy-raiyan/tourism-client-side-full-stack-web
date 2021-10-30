@@ -1,33 +1,11 @@
 import React from "react";
 import { Col, Container, Form, InputGroup, Row } from "react-bootstrap";
-import { useForm } from "react-hook-form";
-import Swal from "sweetalert2";
+import useNewAllSevices from "./../../Hooks/useNewAllSevices";
 import "./AddNewService.css";
 
 const AddNewService = () => {
-  const { register, handleSubmit, reset } = useForm();
-  // Add a new service
-  const onSubmit = (data) => {
-    fetch("http://localhost:5000/place", {
-      method: "POST",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify(data),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        if (data) {
-          Swal.fire({
-            position: "top-bottom",
-            icon: "success",
-            title: "Your service has been saved",
-            showConfirmButton: false,
-            timer: 1500,
-          });
-        }
-      });
-    reset();
-    // console.log(data);
-  };
+  const { isNewAdded, register, handleSubmit, onSubmit } = useNewAllSevices();
+
   return (
     <section className="add-service">
       <Container>
