@@ -2,6 +2,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import "./App.css";
+import AddNewService from "./components/AddNewService/AddNewService";
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Home/Header/Header";
 import Home from "./components/Home/Home/Home";
@@ -28,6 +29,9 @@ const App = () => {
             </Route>
             <Route path="/login">
               <Login></Login>
+            </Route>
+            <Route path="/addnewservice">
+              <AddNewService></AddNewService>
             </Route>
             <PrivateRoute path="/orders">
               <Orders></Orders>

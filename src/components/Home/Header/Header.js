@@ -10,7 +10,7 @@ const Header = () => {
   console.log(isLoading);
   return (
     <Navbar bg="light" sticky="top" expand="lg" className="p-3 shadow-sm">
-      <Container>
+      <Container fluid>
         <Link className="navbar-brand" to="/">
           <img
             src="https://shinetheme.com/travelerdata/yatour/wp-content/uploads/2018/11/logo_yatour.svg"
@@ -30,18 +30,25 @@ const Header = () => {
                 My orders
               </Link>
             </li>
-            <li className="nav-item  mt-2 me-3">
-              <Link className="nav-link" to="/manageorders">
-                Manage Orders
-              </Link>
-            </li>
+
             <li className="nav-item  mt-2 me-3">
               <HashLink className="nav-link" to="/home#services">
                 Services
               </HashLink>
             </li>
+
             {userData.email ? (
               <>
+                <li className="nav-item  mt-2 me-3">
+                  <Link className="nav-link" to="/addnewservice">
+                    Add New Service
+                  </Link>
+                </li>
+                <li className="nav-item  mt-2 me-3">
+                  <Link className="nav-link" to="/manageorders">
+                    Manage All Orders
+                  </Link>
+                </li>
                 <li className="nav-item d-flex justify-content-center align-items-center  me-3">
                   <div>
                     <img
