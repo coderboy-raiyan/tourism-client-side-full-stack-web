@@ -45,6 +45,9 @@ const ManageOrders = () => {
           .then((data) => {
             setUpdated(data);
             Swal.fire("Saved!", "", "success");
+          })
+          .finally(() => {
+            setUpdated(false);
           });
       } else if (result.isDenied) {
         Swal.fire("Changes are not saved", "", "info");
