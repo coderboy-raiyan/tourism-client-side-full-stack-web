@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Card, Col } from "react-bootstrap";
 import { BsSpeedometer2 } from "react-icons/bs";
 import { GoLocation } from "react-icons/go";
@@ -21,10 +21,18 @@ const SingalService = ({ visit }) => {
     reviews,
   } = visit;
   const history = useHistory();
-
+  const [isReadMore, setReadMore] = useState(false);
   const handelPlace = () => {
     history.push(`/order/${_id}`);
     window.scrollTo(0, 0);
+  };
+
+  const handelClick = () => {
+    if (!isReadMore) {
+      setReadMore(true);
+    } else {
+      setReadMore(false);
+    }
   };
 
   return (
@@ -40,8 +48,10 @@ const SingalService = ({ visit }) => {
           </p>
           <Card.Title className="card-title">{title}</Card.Title>
           <p className="des">
-            {des.slice(0, 70)}{" "}
-            <span className="text-primary">read more...</span>{" "}
+            {isReadMore ? des : des.slice(0, 70)}
+            <span className="text-primary ms-2" onClick={handelClick}>
+              read more...
+            </span>{" "}
           </p>
           <p className="ratings">
             <span>
