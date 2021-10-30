@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Col, Container, Row, Table } from "react-bootstrap";
+import Swal from "sweetalert2";
 import SingalDashboard from "../SingalDashboard/SingalDashboard";
 import "./ManageOrders.css";
 
@@ -15,13 +16,29 @@ const ManageOrders = () => {
 
   // update status
   const handelUpdate = (id) => {
-    fetch(`http://localhost:5000/placeorder`, {
-      method: "PUT",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify({ id: id }),
-    })
-      .then((res) => res.json())
-      .then((data) => setUpdated(data));
+    Swal.fire({
+      title: "Do you want to update this one?",
+      showDenyButton: true,
+      showCancelButton: true,
+      confirmButtonText: "Yes",
+      denyButtonText: `No`,
+    }).then((result) => {
+      /* Read more about isConfirmed, isDenied below */
+      if (result.isConfirmed) {
+        fetch(`http://localhost:5000/placeorder`, {
+          method: "PUT",
+          headers: { "content-type": "application/json" },
+          body: JSON.stringify({ id: id }),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            setUpdated(data);
+            Swal.fire("Saved!", "", "success");
+          });
+      } else if (result.isDenied) {
+        Swal.fire("Changes are not saved", "", "info");
+      }
+    });
   };
 
   return (
