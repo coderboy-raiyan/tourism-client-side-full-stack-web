@@ -22,9 +22,11 @@ const OrderSkeliton = () => {
               <p className="card-text fs-6">
                 <Skeleton />
               </p>
-              <span class="badge bg-dark px-5 py-2 text-capitalize">
-                <Skeleton />
-              </span>
+              <p className="card-text fs-6">
+                <span className="fw-bold">
+                  <Skeleton height="50px" />
+                </span>
+              </p>
               <button className="cancel-btn py-2 px-5">
                 <Skeleton />
               </button>

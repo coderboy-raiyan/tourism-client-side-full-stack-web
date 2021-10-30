@@ -26,9 +26,16 @@ const SingalOrders = ({ order, handelCancel }) => {
               <p className="card-text fs-6">
                 <GoLocation /> {order?.placeDetails?.place}
               </p>
-              <span class="badge bg-dark p-2 text-capitalize">
-                {order?.placeDetails?.status}
-              </span>
+              <p className="card-text fs-6">
+                <span className="fw-bold">
+                  {" "}
+                  Price : ${order?.placeDetails?.price}
+                </span>
+                <span className="badge bg-dark p-2 text-capitalize ms-3">
+                  {order.orderStatus}
+                </span>
+              </p>
+
               <button
                 className="cancel-btn"
                 onClick={() => handelCancel(order._id)}

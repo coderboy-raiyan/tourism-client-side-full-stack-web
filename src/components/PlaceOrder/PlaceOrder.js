@@ -23,8 +23,9 @@ const PlaceOrder = () => {
 
   const onSubmit = (data) => {
     setRegisterData(data);
+    const orderStatus = placeDetails.status;
 
-    const placeAllDetails = { ...data, placeDetails };
+    const placeAllDetails = { ...data, placeDetails, orderStatus };
 
     fetch("http://localhost:5000/place/going", {
       method: "POST",
