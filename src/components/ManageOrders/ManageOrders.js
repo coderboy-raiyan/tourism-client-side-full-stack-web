@@ -4,11 +4,20 @@ import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Swal from "sweetalert2";
 import SingalDashboard from "../SingalDashboard/SingalDashboard";
+import SingalDashSkeliton from "../SingalDashSkeliton/SingalDashSkeliton";
 import "./ManageOrders.css";
 
 const ManageOrders = () => {
   const [allOrders, setAllOrders] = useState([]);
   const [isUpdated, setUpdated] = useState(false);
+  const [isDasLoading, setDasLoading] = useState(true);
+
+  useEffect(() => {
+    setDasLoading(true);
+    setTimeout(() => {
+      setDasLoading(false);
+    }, 3000);
+  }, []);
 
   useEffect(() => {
     fetch("http://localhost:5000/placeorder")
@@ -115,14 +124,18 @@ const ManageOrders = () => {
                 </tr>
               </thead>
               <tbody>
-                {allOrders.map((order) => (
-                  <SingalDashboard
-                    order={order}
-                    key={order._id}
-                    handelUpdate={handelUpdate}
-                    handelDelete={handelDelete}
-                  />
-                ))}
+                {allOrders.map((order) =>
+                  isDasLoading ? (
+                    <SingalDashSkeliton key={order._id} />
+                  ) : (
+                    <SingalDashboard
+                      order={order}
+                      key={order._id}
+                      handelUpdate={handelUpdate}
+                      handelDelete={handelDelete}
+                    />
+                  )
+                )}
               </tbody>
             </Table>
           </Col>
