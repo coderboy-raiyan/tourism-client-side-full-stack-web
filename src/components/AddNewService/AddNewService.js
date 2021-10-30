@@ -1,11 +1,8 @@
 import React from "react";
+import "./AddNewService.css";
 
 const AddNewService = () => {
-  return (
-    <div>
-      <h1>This is add new service</h1>
-    </div>
-  );
+  return <section></section>;
 };
 
 export default AddNewService;

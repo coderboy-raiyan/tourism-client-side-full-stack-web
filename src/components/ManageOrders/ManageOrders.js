@@ -118,7 +118,7 @@ const ManageOrders = () => {
             </h1>
           </Col>
           <Col xs={12} lg={12} md={12}>
-            <Table striped bordered hover>
+            <Table striped bordered hover responsive>
               <thead>
                 <tr>
                   <th>Name</th>

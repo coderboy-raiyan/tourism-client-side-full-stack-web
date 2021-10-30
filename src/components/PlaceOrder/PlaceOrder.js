@@ -145,7 +145,18 @@ const PlaceOrder = () => {
                         type="text"
                         required
                         defaultValue={placeDetails.place}
-                        {...register("Place ")}
+                        {...register("Place")}
+                      />
+                    </InputGroup>
+                  </Col>
+                  <Col xs={12} lg={12} md={12}>
+                    <InputGroup className="mb-3">
+                      <input
+                        placeholder="Your Address"
+                        className="form-control shadow"
+                        type="text"
+                        required
+                        {...register("address")}
                       />
                     </InputGroup>
                   </Col>

@@ -27,7 +27,10 @@ const NotFound = () => {
                 />
               </div>
               <Link className="text-decoration-none" to="/home">
-                <button className="d-block btn btn-outline-dark m-auto py-2 px-5">
+                <button
+                  className="d-block btn btn-outline-dark m-auto py-2 px-5"
+                  onClick={() => window.scrollTo(0, 0)}
+                >
                   Home
                 </button>
               </Link>

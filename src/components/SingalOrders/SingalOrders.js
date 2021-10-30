@@ -4,7 +4,7 @@ import { GoLocation } from "react-icons/go";
 import "./SingalOrders.css";
 
 const SingalOrders = ({ order, handelCancel }) => {
-  const { Place, date, des } = order;
+  const { Place, date, des, address } = order;
   console.log(order);
   return (
     <Col xs={12} lg={6} md={6}>
@@ -24,7 +24,7 @@ const SingalOrders = ({ order, handelCancel }) => {
                 Booked : {date}
               </p>
               <p className="card-text fs-6">
-                <GoLocation /> {order?.placeDetails?.place}
+                Destination : <GoLocation /> {order?.placeDetails?.place}
               </p>
               <p className="card-text fs-6">
                 <span className="fw-bold">
@@ -35,6 +35,7 @@ const SingalOrders = ({ order, handelCancel }) => {
                   {order.orderStatus}
                 </span>
               </p>
+              <p className="card-text fs-6">Address : {address}</p>
 
               <button
                 className="cancel-btn"
