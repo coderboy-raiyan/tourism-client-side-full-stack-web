@@ -113,6 +113,11 @@ const ManageOrders = () => {
       <Container>
         <Row className="py-5">
           <Col xs={12} lg={12} md={12}>
+            <h1 className="text-center mb-5 py-4 border-bottom">
+              Manage Dashboard
+            </h1>
+          </Col>
+          <Col xs={12} lg={12} md={12}>
             <Table striped bordered hover>
               <thead>
                 <tr>
