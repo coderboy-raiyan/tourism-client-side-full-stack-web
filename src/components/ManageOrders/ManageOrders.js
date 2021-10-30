@@ -41,6 +41,38 @@ const ManageOrders = () => {
     });
   };
 
+  // Delete a order from dashboard.
+  const handelDelete = (id) => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`http://localhost:5000/placeorder/${id}`, {
+          method: "DELETE",
+          headers: { "content-type": "application/json" },
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            if (data) {
+              const updatedOrders = allOrders.filter(
+                (order) => order._id !== id
+              );
+              setAllOrders(updatedOrders);
+              Swal.fire("Deleted!", "Your file has been deleted.", "success");
+            }
+          });
+      } else {
+        Swal.fire("it's okay!", "", "info");
+      }
+    });
+  };
+
   return (
     <section className="main-dashboard">
       <Container>
@@ -62,6 +94,7 @@ const ManageOrders = () => {
                     order={order}
                     key={order._id}
                     handelUpdate={handelUpdate}
+                    handelDelete={handelDelete}
                   />
                 ))}
               </tbody>
