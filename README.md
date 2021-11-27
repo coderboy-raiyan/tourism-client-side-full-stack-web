@@ -6,11 +6,11 @@ It is a single page application made with ReactJS, React-Bootstrap, MongoDB Atla
 
 ### ✅ This a website for your next trip.
 
-### ✅ You can find here most amazing places from all over the world.
+### ✅ It has the back-end & user can book their next trip ticket.
 
-### ✅ We give you the best tourism experience and a great support.
+### ✅ We give you the best tourism experience and a great support. 
 
-### ✅ Also user can add their own liked places and we will provide those services too.
+### ✅ Also User can add their own liked places and we will provide those services too.
 
 ### ✅ And those services are available with a travel guide. So that you can know more about the place you visit.
 
